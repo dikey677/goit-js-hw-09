@@ -12,11 +12,12 @@ btnStop.addEventListener('click', onBtnStop);
 let intervalID = null;
 
 function onBtnStart(e) {
+  btnStart.disabled = true;
+  btnStop.disabled = false;
+
   intervalID = setInterval(() => {
     console.log(getRandomHexColor());
     body.style.backgroundColor = getRandomHexColor();
-    btnStart.disabled = true;
-    btnStop.disabled = false;
   }, 1000);
 }
 
